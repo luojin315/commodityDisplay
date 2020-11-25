@@ -1,5 +1,10 @@
 
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 import home from '../components/homePage/index'
+
+Vue.use(VueRouter);
+
 
 const routes = [
 	{
@@ -17,4 +22,8 @@ const routes = [
 		component: () => import('../components/homePage/test')
 	}
 ]
-export default routes;
+const router = new VueRouter({
+	mode: 'hash',
+	routes
+})
+export default router;
