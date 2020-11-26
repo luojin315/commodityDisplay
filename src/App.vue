@@ -25,4 +25,7 @@ export default {
   padding: 0px;
   box-sizing: border-box;
 }
+#app{
+  font-family: "微软雅黑";
+}
 </style>
