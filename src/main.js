@@ -3,7 +3,9 @@ import App from './App.vue'
 import axios from 'axios'
 import router from './router'
 // import routes from './router'
-// import ElementUI from "element-ui"
+import ElementUI from "element-ui"
+import 'element-ui/lib/theme-chalk/index.css';
+
 Vue.config.productionTip = false
 
 Vue.prototype.$axios = axios;
@@ -11,7 +13,7 @@ Vue.prototype.$axios = axios;
 
 // Vue.use(VueRouter)
 
-// Vue.use(ElementUI)
+Vue.use(ElementUI)
 
 
 

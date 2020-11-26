@@ -1,30 +1,28 @@
 <template>
-	<div id="app">
-		<router-view></router-view>
-	</div>
+  <div id="app">
+    <transition name="el-zoom-in-center">
+      <router-view></router-view>
+    </transition>
+  </div>
 </template>
 
 <script>
-	export default {
-		name: 'App',
-		mounted() {
-			this.$axios.get('/api')
-				.then(res => {
-					console.log(res)
-				}).catch(res => {
-
-				})
-		}
-	}
+export default {
+  name: "App",
+  mounted() {
+    // this.$axios.get('/api')
+    // 	.then(res => {
+    // 		console.log(res)
+    // 	}).catch(res => {
+    // 	})
+  },
+};
 </script>
 
 <style>
-	#app {
-		font-family: Avenir, Helvetica, Arial, sans-serif;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		text-align: center;
-		color: #2c3e50;
-		margin-top: 60px;
-	}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
 </style>
