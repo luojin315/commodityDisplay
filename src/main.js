@@ -2,18 +2,17 @@ import Vue from 'vue'
 import App from './App.vue'
 import axios from 'axios'
 import router from './router'
-// import routes from './router'
-import ElementUI from "element-ui"
-import 'element-ui/lib/theme-chalk/index.css';
+import { Row, Col, Icon } from "element-ui"
+import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.config.productionTip = false
 
 Vue.prototype.$axios = axios;
 
-
-// Vue.use(VueRouter)
-
-Vue.use(ElementUI)
+//按需加载使用的elementui
+Vue.use(Row)
+Vue.use(Col)
+Vue.use(Icon)
 
 
 

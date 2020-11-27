@@ -28,4 +28,11 @@ export default {
 #app{
   font-family: "微软雅黑";
 }
+a{
+  text-decoration: none;
+  color: #333;
+}
+button{
+  outline: none;
+}
 </style>
