@@ -2,7 +2,7 @@
   <div id="home_banner">
     <hideNav />
     <div class="banner_box">
-      <headerComponent class="header_style" />
+      <headerComponent />
       <div class="banner_font">
         <h4>Cabin chair w/ leather - USD 695.00</h4>
         <h1>Our first wooden furniture. <br />The Vipp Cabin chair</h1>
@@ -45,12 +45,12 @@ export default {
       background-size: cover;
     }
   }
-
   .banner_font {
     color: #282828;
     max-width: 500px;
     margin-left: 8%;
     padding-top: 200px;
+    animation: getInto 2s;
     h4 {
       font-size: 14px;
       font-weight: normal;
@@ -58,6 +58,16 @@ export default {
     h1 {
       font-size: 38px;
       margin-top: 10px;
+    }
+  }
+  @keyframes getInto {
+    from{
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0px);
     }
   }
   @media (max-width: 1000px) {

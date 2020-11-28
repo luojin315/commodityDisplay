@@ -27,6 +27,7 @@ export default {
 }
 #app{
   font-family: "微软雅黑";
+  
 }
 a{
   text-decoration: none;
@@ -35,4 +36,5 @@ a{
 button{
   outline: none;
 }
+
 </style>

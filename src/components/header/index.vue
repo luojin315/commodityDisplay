@@ -1,24 +1,23 @@
 <template>
   <div id="head">
     <el-row :gutter="20">
-      <el-col :span="8">
+      <el-col :span="6">
         <div class="grid-content bg-purple title">
           <router-link to="/home">new dream</router-link>
         </div>
       </el-col>
-      <el-col :span="16">
+      <el-col :span="18">
         <div class="grid-content bg-purple nav_content_box">
-          <router-link to="/home">All products</router-link>
-          <router-link to="/home">Bins</router-link>
-          <router-link to="/home">Lighting</router-link>
-          <router-link to="/home">Kitchen</router-link>
-          <router-link to="/home">Furniture</router-link>
-          <router-link to="/home">Hotel</router-link>
-          <router-link to="/home">Stories</router-link>
+          <router-link
+            v-for="(item, index) in navList"
+            :key="index"
+            :to="item.url"
+            >{{ item.text }}</router-link
+          >
           <router-link to="/home">
             <i class="el-icon-s-goods"></i>
           </router-link>
-          <i class="el-icon-s-unfold"></i>
+          <i class="el-icon-s-unfold" @click="busValue"></i>
         </div>
       </el-col>
     </el-row>
@@ -26,11 +25,34 @@
 </template>
 
 <script>
+import Bus from "./hideNavMiddle";
+
 export default {
   name: "headerComponent",
   data() {
-    return {};
-  }
+    return {
+      navList: [
+        { text: "All products", url: "/test" },
+        { text: "Bins", url: "/home" },
+        { text: "Lighting", url: "/home" },
+        { text: "Kitchen", url: "/home" },
+        { text: "Furniture", url: "/home" },
+        { text: "Hotel", url: "/home" },
+        { text: "Stories", url: "/home" },
+      ],
+    };
+  },
+  methods: {
+    busValue() {
+      Bus.$emit("topNavShow", true);
+    },
+  },
+  mounted() {
+    this.navList.map((res) => {
+      res.text = res.text.toUpperCase();
+    });
+  },
+  computed: {},
 };
 </script>
 
@@ -48,8 +70,8 @@ export default {
   min-height: 60px;
   line-height: 60px;
   box-sizing: border-box;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 .row-bg {
   padding: 10px 0;
@@ -62,19 +84,19 @@ export default {
 .nav_content_box {
   float: right;
   a {
-    margin: 0px 10px 0px 10px;
-    font-size: 15px;
+    margin: 0px 15px 0px 15px;
+    font-size: 14px;
     text-shadow: 0px 0px 0.5px #a0a0a0;
     transition: 0.3s;
-    color: #a0a0a0;
+    color: #282828;
     &:hover {
-      font-size: 16px;
+      font-size: 15px;
       color: #333;
     }
   }
 
   i {
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
     color: #333;
   }
